@@ -1,0 +1,47 @@
+.add-list {
+    &__popup {
+        width: 250px;
+        padding: 18px;
+
+        position: relative;
+        top: -20px;
+        left: 10px;
+
+        background: #FFF;
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+
+        &-close-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            cursor: pointer;
+            transform: translate(50%, -50%);
+        }
+
+        .button {
+            width: 100%;
+        }
+
+        &-colors {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+    
+            .badge {
+                width: 20px;
+                height: 20px;
+
+                position: static;
+
+                border: 2px solid transparent;
+                cursor: pointer;
+                
+                &.active {
+                    border: 2px solid #525252;
+                }
+            }
+        }
+    }
+}
