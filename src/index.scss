@@ -30,7 +30,8 @@ img {
 }
 
 .todo {
-	height: 550px;
+	height: 700px;
+	overflow: hidden;
 
 	border: 1px solid #f4f6f8;
 	border-radius: 10px;
@@ -84,7 +85,7 @@ img {
 	cursor: pointer;
 
 	transition: all .3s linear;
-	
+
 	&:hover {
 		background: darken(#4DD599, 6%);
 	}

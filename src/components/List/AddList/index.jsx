@@ -7,10 +7,27 @@ import closeSvg from '../../../assets/img/close.svg'
 import './AddButtonList.scss';
 
 
-const AddList = ({ colors }) => {
+const AddList = ({ colors, onAdd }) => {
 
     const [visiblePopup, setVisiblePopup] = useState(false);
     const [selectedColor, selectColor] = useState(colors[0].id);
+    const [inputValue, setInputValue] = useState('');
+
+    const onClose =() => {
+        setInputValue('');
+        selectColor(colors[0].id);
+        setVisiblePopup(false);
+    }
+
+    const addList = () => {
+        if(!inputValue) {
+            alert('Введите название списка');
+            return
+        }
+        const color = colors.filter(c => c.id === selectedColor)[0].name;
+        onAdd({ id: Math.random(), name: inputValue, colorId: selectedColor, color });
+        onClose();
+    }
 
     return (
         <div className="add-list">
@@ -32,11 +49,15 @@ const AddList = ({ colors }) => {
 
             {visiblePopup &&
                 <div className='add-list__popup'>
-                    <img onClick={() => setVisiblePopup(false)}
+                    <img onClick={onClose}
                         className="add-list__popup-close-btn"
                         src={closeSvg}
                         alt="close-icon" />
-                    <input className="field" type="text" placeholder="Название списка" />
+                    <input className="field"
+                        type="text"
+                        placeholder="Название списка"
+                        value={inputValue}
+                        onChange={e => setInputValue(e.target.value)} />
                     <div className="add-list__popup-colors">
                         {
                             colors.map(color => (
@@ -48,7 +69,7 @@ const AddList = ({ colors }) => {
                             ))
                         }
                     </div>
-                    <button className="button">Добавить</button>
+                    <button onClick={addList} className="button">Добавить</button>
                 </div>
             }
         </div>
