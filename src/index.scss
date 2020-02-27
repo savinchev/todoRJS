@@ -30,8 +30,7 @@ img {
 }
 
 .todo {
-	height: 700px;
-	overflow: hidden;
+	display: flex;
 
 	border: 1px solid #f4f6f8;
 	border-radius: 10px;
@@ -39,11 +38,16 @@ img {
 
 	&__sidebar {
 		width: 240px;
-		height: 100%;
+		min-height: 700px;
 		padding: 60px 20px;
 
 		border-right: 1px solid #f1f1f1;
 		background-color: #f4f6f8;
+	}
+
+	&__tasks {
+		flex: 1;
+		padding: 60px;
 	}
 }
 
@@ -84,7 +88,7 @@ img {
 	border-radius: 4px;
 	cursor: pointer;
 
-	transition: all .3s linear;
+	transition: all .15s ease-in-out;
 
 	&:hover {
 		background: darken(#4DD599, 6%);
