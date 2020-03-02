@@ -19,11 +19,6 @@
       "name": "Продукты",
       "colorId": 8,
       "id": 5
-    },
-    {
-      "name": "555777",
-      "colorId": 4,
-      "id": 6
     }
   ],
   "tasks": [
@@ -38,7 +33,7 @@
       "id": 2,
       "listId": 2,
       "text": "Изучить паттерны проектирования",
-      "completed": true,
+      "completed": false,
       "comleted": true
     },
     {

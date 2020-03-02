@@ -31,7 +31,7 @@ const App = () => {
 
 	const onAddTask = (listId, taskObj) => {
 		const newList = lists.map(item => {
-			if (item.id = listId) {
+			if (item.id === listId) {
 				item.tasks = [...item.tasks, taskObj]
 			}
 			return item;
